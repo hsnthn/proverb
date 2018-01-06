@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Serving Web Content</title>
+    <script type="text/javascript" src="code.jquery.com/jquery-1.11.3.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+
+        #share-buttons img {
+        width: 35px;
+        padding: 5px;
+        border: 0;
+        box-shadow: 0;
+        display: inline;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="search" method="post" style="width:800px; margin:0 auto;">
+        <input type='submit' name='initial' value='A' />
+        <input type='submit' name='initial' value='B' />
+        <input type='submit' name='initial' value='C' />
+        <input type='submit' name='initial' value='D' />
+        <input type='submit' name='initial' value='E' />
+        <input type='submit' name='initial' value='F' />
+        <input type='submit' name='initial' value='I' />
+        <input type='submit' name='initial' value='J' />
+        <input type='submit' name='initial' value='K' />
+        <input type='submit' name='initial' value='L' />
+        <input type='submit' name='initial' value='M' />
+        <input type='submit' name='initial' value='N' />
+        <input type='submit' name='initial' value='O' />
+        <input type='submit' name='initial' value='P' />
+        <input type='submit' name='initial' value='R' />
+        <input type='submit' name='initial' value='S' />
+        <input type='submit' name='initial' value='T' />
+        <input type='submit' name='initial' value='U' />
+        <input type='submit' name='initial' value='V' />
+        <input type='submit' name='initial' value='Y' />
+        <input type='submit' name='initial' value='Z' />
+
+        <br/>
+        <br/>
+        <br/>
+
+        <table style="width:800px; margin:0 auto;">
+            <tr>
+                <th>PROVERB</th>
+            </tr>
+            <tr th:each="pro : ${list}">
+                <td th:text="${pro.text}"></td>
+            </tr>
+        </table>
+    </form>
+
+    <br/>
+    <br/>
+    <br/>
+
+
+    <form id="form" action="javascript:void('');" style="width:800px; margin:0 auto;">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td><input id="name" type="string" name="name"/></td>
+
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input id="email" type="string" name="email"/></td>
+            </tr>
+            <tr>
+                <td>Comment</td>
+                <td><textarea id="comment" name="comment"></textarea></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Add Comment"/></td>
+            </tr>
+        </table>
+    </form>
+
+
+    <div id="share-buttons" style="width:800px; margin:0 auto;">
+
+        <!-- Buffer -->
+        <a href="https://bufferapp.com/add?url=https://proverbs.com&amp;text=Proverbs!" target="_blank">
+            <img src="https://simplesharebuttons.com/images/somacro/buffer.png" alt="Buffer" />
+        </a>
+
+        <!-- Digg -->
+        <a href="http://www.digg.com/submit?url=https://proverbs.com" target="_blank">
+            <img src="https://simplesharebuttons.com/images/somacro/diggit.png" alt="Digg" />
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:?Subject=Proverbs!&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://proverbs.com">
+            <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
+        </a>
+
+        <!-- Facebook -->
+        <a href="http://www.facebook.com/sharer.php?u=https://proverbs.com" target="_blank">
+            <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+        </a>
+
+        <!-- Google+ -->
+        <a href="https://plus.google.com/share?url=https://proverbs.com" target="_blank">
+            <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://proverbs.com" target="_blank">
+            <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+        </a>
+
+        <!-- Pinterest -->
+        <a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
+            <img src="https://simplesharebuttons.com/images/somacro/pinterest.png" alt="Pinterest" />
+        </a>
+
+        <!-- Print -->
+        <a href="javascript:;" onclick="window.print()">
+            <img src="https://simplesharebuttons.com/images/somacro/print.png" alt="Print" />
+        </a>
+
+        <!-- Reddit -->
+        <a href="http://reddit.com/submit?url=https://proverbs.com&amp;title=Proverbs!" target="_blank">
+            <img src="https://simplesharebuttons.com/images/somacro/reddit.png" alt="Reddit" />
+        </a>
+
+        <!-- StumbleUpon-->
+        <a href="http://www.stumbleupon.com/submit?url=https://proverbs.com&amp;title=Proverbs!" target="_blank">
+            <img src="https://simplesharebuttons.com/images/somacro/stumbleupon.png" alt="StumbleUpon" />
+        </a>
+
+        <!-- Tumblr-->
+        <a href="http://www.tumblr.com/share/link?url=https://proverbs.com&amp;title=Proverbs!" target="_blank">
+            <img src="https://simplesharebuttons.com/images/somacro/tumblr.png" alt="Tumblr" />
+        </a>
+
+        <!-- Twitter -->
+        <a href="https://twitter.com/share?url=https://proverbs.com&amp;text=Proverbs&amp;hashtags=proverbs" target="_blank">
+            <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+        </a>
+
+        <!-- VK -->
+        <a href="http://vkontakte.ru/share.php?url=https://proverbs.com" target="_blank">
+            <img src="https://simplesharebuttons.com/images/somacro/vk.png" alt="VK" />
+        </a>
+
+        <!-- Yummly -->
+        <a href="http://www.yummly.com/urb/verify?url=https://proverbs.com&amp;title=Proverbs!" target="_blank">
+            <img src="https://simplesharebuttons.com/images/somacro/yummly.png" alt="Yummly" />
+        </a>
+
+    </div>
+
+
+    <script>
+
+        $(function(){
+            $("#form").submit(function(e){
+                // Create data object
+                var data = {};
+                data.name = $("#name").val();
+                data.email = $("#email").val();
+                data.comment = $("#comment").val();
+                // The url of your server-side script that handles the post submission
+                var url = "http://www.someurl.com/post_comment.php";
+                $.POST(url, data)
+                .done(function(response){
+                    // This code executes when the server returns a response
+                    // Do something with the response like adding the comment to the current list of comments
+                    // Example (if your response is HTML, better would be a JSON string):
+                    $("#comments").append(response);
+                });
+                e.preventDefault();
+            });
+        });
+
+    </script>
+
+</body>
+</html>
